@@ -8,10 +8,13 @@ public class DialogoUI : MonoBehaviour
     [SerializeField] private TMP_Text areaDoTexto;
     [SerializeField] private ObjetoDialogo dialogoTest;
     
+    private GerirResposta gerirResposta;
+
     private EfeitoDeEscrita efeitoDeEscrita;
     private void Start()
     {
         efeitoDeEscrita = GetComponent<EfeitoDeEscrita>();
+        gerirResposta = GetComponent<GerirResposta>();
         FecharCaixaDeDialogo();
         MostrarDialogo(dialogoTest);
     }
@@ -22,8 +25,12 @@ public class DialogoUI : MonoBehaviour
     }
 
     private IEnumerator EtapasDoDialogo(ObjetoDialogo objetoDialogo){
-        foreach (string dialogo in objetoDialogo.Dialogo){
+        for(int i = 0; i <objetoDialogo.Dialogo.Length; i++){
+            string dialogo = objetoDialogo.Dialogo[i];
             yield return efeitoDeEscrita.Rodar(dialogo, areaDoTexto);
+
+            if(i == objetoDialogo.Dialogo.Length - 1 && objetoDialogo.Respostas != null && objetoDialogo.Respostas.Length > 0) break;
+
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
 
