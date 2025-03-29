@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Guardioes_da_Terra.sln"
+    "dotnet.defaultSolution": "Hackathon-LABCN25.sln"
 }
