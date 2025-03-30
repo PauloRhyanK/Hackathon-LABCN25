@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cabana.unity
+    path: Assets/Scenes/Lugares/Cabana.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Lugares/Floresta.unity
+    guid: c7b3ca3655f292c478793792f8e89724
+  - enabled: 1
+    path: Assets/Scenes/Lugares/Sonho.unity
+    guid: b312850abca286a44a0a6989f9bf2e3a
+  - enabled: 1
+    path: Assets/Scenes/Minigame/Game.unity
+    guid: 1dcc2bc7669b97649a74367ecec2dcda
   m_configObjects: {}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1566b741d35535242b814fa5688eafcd, type: 3}
+  m_Name: LivroKrenak
+  m_EditorClassIdentifier: 
+  dialogo:
+  - "\"Os rios, esses seres que sempre habitaram os mundos em diferentes formas,
+    s\xE3o quem me sugerem que, se h\xE1 futuro a ser cogitado, esse futuro \xE9
+    ancestral, porque j\xE1 estava aqui.\" -Krenak"
+  respostas: []

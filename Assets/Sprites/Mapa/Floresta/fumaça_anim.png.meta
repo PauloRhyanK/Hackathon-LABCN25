@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdfb0e2b226ed33418c39fb7b6ce94c1
+guid: f1eb8091daa3fce47a5a6b679cc37af2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,148 +97,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minigameRegar_0
+      name: "fuma\xE7a_anim_0"
       rect:
         serializedVersion: 2
-        x: 10
-        y: 25
-        width: 32
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 200
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b274390b8c0b27499c4032afeddbcac
-      internalID: -1422186521
+      spriteID: 5d323bc1677e7034dbb7e9fd6eef8567
+      internalID: 384368360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minigameRegar_1
+      name: "fuma\xE7a_anim_1"
       rect:
         serializedVersion: 2
-        x: 57
-        y: 108
-        width: 34
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 200
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 276f70c7a9d1311419a3df6452edc2e2
-      internalID: -80870616
+      spriteID: c18247500bfa756468efef84c121699c
+      internalID: -110286658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minigameRegar_2
+      name: "fuma\xE7a_anim_2"
       rect:
         serializedVersion: 2
-        x: 108
-        y: 29
-        width: 24
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 200
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c32d42670c10d414f9df9576bde94f15
-      internalID: 1132537788
+      spriteID: 382153a073818dd43a6fb87eb3480407
+      internalID: 1539856748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minigameRegar_3
+      name: "fuma\xE7a_anim_3"
       rect:
         serializedVersion: 2
-        x: 58
-        y: 77
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 200
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 645cbaba6e1a5dd40a6c74f1ab502ad1
-      internalID: 228680562
+      spriteID: e0ffb58a5e8d6ad4c8a1402bd348db8c
+      internalID: 1694488898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minigameRegar_4
+      name: "fuma\xE7a_anim_4"
       rect:
         serializedVersion: 2
-        x: 60
-        y: 53
-        width: 26
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 200
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83ab8c231a9c2b14f975ad1ce9649740
-      internalID: -2134955412
+      spriteID: 79fb8bd860c39754082de29d1a18a712
+      internalID: -362606444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minigameRegar_5
+      name: "fuma\xE7a_anim_5"
       rect:
         serializedVersion: 2
-        x: 58
-        y: 29
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79eb12443bf291c47b79662e210acd79
-      internalID: 115616849
+      spriteID: 4f20a1a98f15f834db7e131ae6680c2a
+      internalID: 1500842227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minigameRegar_6
+      name: "fuma\xE7a_anim_6"
       rect:
         serializedVersion: 2
-        x: 64
-        y: 6
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f93a5e2f3775e44cbc1471c5742f4d7
-      internalID: 1391222861
+      spriteID: 94324dc838781124a9a7b8bf51519727
+      internalID: 1272437825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "fuma\xE7a_anim_7"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0287bbca2bfd4f4418f0efb78fe48363
+      internalID: 994422039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "fuma\xE7a_anim_8"
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e406da96e74732142a24878ff0d2ba94
+      internalID: 1016030157
       vertices: []
       indices: 
       edges: []
@@ -254,13 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      minigameRegar_0: -1422186521
-      minigameRegar_1: -80870616
-      minigameRegar_2: 1132537788
-      minigameRegar_3: 228680562
-      minigameRegar_4: -2134955412
-      minigameRegar_5: 115616849
-      minigameRegar_6: 1391222861
+      "fuma\xE7a_anim_0": 384368360
+      "fuma\xE7a_anim_1": -110286658
+      "fuma\xE7a_anim_2": 1539856748
+      "fuma\xE7a_anim_3": 1694488898
+      "fuma\xE7a_anim_4": -362606444
+      "fuma\xE7a_anim_5": 1500842227
+      "fuma\xE7a_anim_6": 1272437825
+      "fuma\xE7a_anim_7": 994422039
+      "fuma\xE7a_anim_8": 1016030157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
