@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1566b741d35535242b814fa5688eafcd, type: 3}
-  m_Name: Maldade
+  m_Name: New Objeto Dialogo
   m_EditorClassIdentifier: 
   dialogo:
-  - "V\xE1 embora voc\xEA me maguou :("
-  respostas: []
+  - 
+  - 
+  - 
+  respostas:
+  - textoResposta: 
+    objetoDialogo: {fileID: 0}
+  - textoResposta: 
+    objetoDialogo: {fileID: 0}

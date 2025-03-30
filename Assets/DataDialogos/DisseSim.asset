@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo:
   - Ola tudo bom?
-  - "O que voc\xEA pensa sobre as arvores?"
+  - "O que voc\xEA pensa sobre as arvores?\nGosta delas?"
+  respostas:
+  - textoResposta: "N\xE3o, eu simplesmente n\xE3o suporto elas existirem"
+    objetoDialogo: {fileID: 11400000, guid: 00dc9a1697e4bb0408abfadbf8549535, type: 2}
+  - textoResposta: "amo, meu av\xF4 me ensinou que devemos protege-las"
+    objetoDialogo: {fileID: 11400000, guid: f2532b2740ffcbc449bc14cc73928b83, type: 2}

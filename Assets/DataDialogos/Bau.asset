@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1566b741d35535242b814fa5688eafcd, type: 3}
-  m_Name: Maldade
+  m_Name: Bau
   m_EditorClassIdentifier: 
   dialogo:
-  - "V\xE1 embora voc\xEA me maguou :("
-  respostas: []
+  - 'Oi eu sou o Bauzinho
+
+    Seu amiguinho'
+  - Quer me abrir?
+  respostas:
+  - textoResposta: Sim quero
+    objetoDialogo: {fileID: 11400000, guid: f2532b2740ffcbc449bc14cc73928b83, type: 2}
+  - textoResposta: Nann
+    objetoDialogo: {fileID: 11400000, guid: 00dc9a1697e4bb0408abfadbf8549535, type: 2}
