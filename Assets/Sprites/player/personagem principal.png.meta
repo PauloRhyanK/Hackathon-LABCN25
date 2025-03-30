@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7786db1c78731d4dbcc9a80747561d1
+guid: 28fa9c236a5d5de42ae1bac5a2fffef4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: personagem principal_0
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 506
+        width: 273
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331e4bc6b0abc8c4fbfe891a57144bf3
+      internalID: -508091326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personagem principal_1
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 506
+        width: 273
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de87dede756c97a448ff0ef455b21bc8
+      internalID: 802624911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personagem principal_2
+      rect:
+        serializedVersion: 2
+        x: 4254
+        y: 484
+        width: 273
+        height: 450
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3047b18fe3843489a5715749e16d9a
+      internalID: 1873657643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: personagem principal_3
+      rect:
+        serializedVersion: 2
+        x: 6173
+        y: 506
+        width: 273
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcc61422a7bb7c49b293a9799ccdaba
+      internalID: -916026958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      personagem principal_0: -508091326
+      personagem principal_1: 802624911
+      personagem principal_2: 1873657643
+      personagem principal_3: -916026958
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
