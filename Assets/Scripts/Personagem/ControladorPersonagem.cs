@@ -34,6 +34,7 @@ public class ControladorPersonagem : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (dialogoUI.estaAberto) return;
         personagemDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
         if(personagemDirection.x != 0){
             animator.SetBool("PodeAndar", true);
