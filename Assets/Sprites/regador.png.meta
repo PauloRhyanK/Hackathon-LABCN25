@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdfb0e2b226ed33418c39fb7b6ce94c1
+guid: 7eb09c88ceca7194491c14b7a51f7bfa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minigameRegar_0
+      name: regador_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 25
-        width: 32
-        height: 100
+        x: 37
+        y: 54
+        width: 257
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,113 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b274390b8c0b27499c4032afeddbcac
-      internalID: -1422186521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minigameRegar_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 108
-        width: 34
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 276f70c7a9d1311419a3df6452edc2e2
-      internalID: -80870616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minigameRegar_2
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 28
-        width: 26
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c32d42670c10d414f9df9576bde94f15
-      internalID: 1132537788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minigameRegar_3
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 77
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 645cbaba6e1a5dd40a6c74f1ab502ad1
-      internalID: 228680562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minigameRegar_4
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 53
-        width: 26
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83ab8c231a9c2b14f975ad1ce9649740
-      internalID: -2134955412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minigameRegar_5
-      rect:
-        serializedVersion: 2
-        x: 58
-        y: 29
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79eb12443bf291c47b79662e210acd79
-      internalID: 115616849
+      spriteID: 7d2698e61073e274db9fb578facf0158
+      internalID: -208773508
       vertices: []
       indices: 
       edges: []
@@ -233,12 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      minigameRegar_0: -1422186521
-      minigameRegar_1: -80870616
-      minigameRegar_2: 1132537788
-      minigameRegar_3: 228680562
-      minigameRegar_4: -2134955412
-      minigameRegar_5: 115616849
+      regador_0: -208773508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
