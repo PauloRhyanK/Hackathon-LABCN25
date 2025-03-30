@@ -42,7 +42,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
     [Tooltip("Disable it to use the default Light Theme on messages")]
     public bool _darkTheme = true;
     [Tooltip("Minimun time that all messages will be displayed.")]
-    public float _minimumMessageTime = 3;
+    public float _minimumMessageTime = 7;
     [Tooltip("Margin X and Y on the corners. Margin X doens't works with centralized messages.")]
     public Vector2 _margin = new Vector2(20, 20);
     [Tooltip("Stop the timer when mouse cursor is over the ToastNotification object")]
@@ -58,6 +58,11 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
     // You can change Awake to Start if this is causing problems with other scripts in your game
     void Awake()
     {
+        if (_messagePrefab == null)
+        {
+            Debug.LogError("ToastNotification: Message Prefab is not assigned. Please assign it in the Inspector.");
+            return;
+        }
 
         // Assign public variables to their static counterparts
         messagePrefab = _messagePrefab;
@@ -73,7 +78,8 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
         // Setup toastNotification object to works correctly in any environment 
         setupToastNotificationObject();
-        void setupToastNotificationObject(){
+        void setupToastNotificationObject()
+        {
             // Check if the ToastNotification object has a CanvasGroup component
             // If you don't add it, there will be no fade animations in your messages
             if (toastNotification.GetComponent<CanvasGroup>())
@@ -97,7 +103,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
             return;
 
         // Hide effect process
-        if ( isHiding)
+        if (isHiding)
         {
             toastNotification.GetComponent<CanvasGroup>().alpha -= 0.08f;
             if (toastNotification.GetComponent<CanvasGroup>().alpha < 0.01f)
@@ -110,7 +116,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
         // Show message process
         else if (toastNotification.GetComponent<CanvasGroup>().alpha < 1)
         {
-            
+
             toastNotification.GetComponent<CanvasGroup>().alpha += 0.05f;
         }
 
@@ -120,14 +126,14 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerEnter(PointerEventData eventData)
     {
         // If stopOnOver is enabled, stop the timer
-        if ( _stopOnOver )
+        if (_stopOnOver)
             isStoped = true;
     }
     // Interface function triggered when mouse pointer exits the object
     public void OnPointerExit(PointerEventData eventData)
     {
         // If stopOnOver is enabled, resume the timer
-        if ( _stopOnOver )
+        if (_stopOnOver)
             isStoped = false;
     }
 
@@ -149,7 +155,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
     // ---------------------------------- 
 
-    public static void Show( string messageText, float timerInSeconds = -1, string iconName = "")
+    public static void Show(string messageText, float timerInSeconds = -1, string iconName = "")
     {
 
         // Hide any existing messages
@@ -157,14 +163,14 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
         // If timerInSeconds is not provided, set it to the default minimumMessageTime
         // This can be zero, so the message will be infinite on the screen.
-        if ( timerInSeconds <= -1 )
+        if (timerInSeconds <= -1)
             timerInSeconds = minimumMessageTime;
 
         // Instantiate message prefab and configure it
         Transform message = Instantiate(messagePrefab, toastNotification);
         message.gameObject.SetActive(true);
         message.name = "Message"; // <- You can change the name of messages that are created here
-        if ( isCanvasGroup ) toastNotification.GetComponent<CanvasGroup>().alpha = 0; // Instatiate with zero alpha (invisible)
+        if (isCanvasGroup) toastNotification.GetComponent<CanvasGroup>().alpha = 0; // Instatiate with zero alpha (invisible)
 
         // Get IMAGE component of text, icons, timer and background
         TextMeshProUGUI text = message.Find("Text").GetComponent<TextMeshProUGUI>();
@@ -192,7 +198,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
         {
             text.text = messageText;
             text.alignment = TextAlignmentOptions.MidlineLeft;
-            if( messageScreenPosition == MessageScreenPosition.Center )
+            if (messageScreenPosition == MessageScreenPosition.Center)
                 text.alignment = TextAlignmentOptions.Center;
         }
 
@@ -201,7 +207,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
         void SetMessageIcon()
         {
             // If a iconName was passed
-            if( iconName != "") 
+            if (iconName != "")
             {
                 iconName = Capitalize(iconName); // You can use your Capitalize function for free. Just call ToastNotification.Capitalize
                 selectedIcon = icons.Find(iconName).transform.GetComponent<UnityEngine.UI.Image>(); // Find icon in child
@@ -211,12 +217,12 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
             else
             {
                 float iconSize = icons.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
-                backgroundSize = new Vector2( backgroundSize.x - iconSize - iconSize / 2 , backgroundSize.y);
+                backgroundSize = new Vector2(backgroundSize.x - iconSize - iconSize / 2, backgroundSize.y);
                 background.GetComponent<RectTransform>().sizeDelta = backgroundSize;
                 Vector2 newAnchor = background.GetComponent<RectTransform>().anchoredPosition;
                 newAnchor = new Vector2(newAnchor.x - iconSize, newAnchor.y);
                 toastNotification.GetComponent<RectTransform>().anchoredPosition = newAnchor;
-                text.GetComponent<RectTransform>().sizeDelta *= 0.90f ;
+                text.GetComponent<RectTransform>().sizeDelta *= 0.90f;
                 text.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
         }
@@ -244,8 +250,8 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
             background.color = backgroundColor;
             timer.color = secondaryColor;
             if (selectedIcon != null)
-                selectedIcon.color = new Color( foreColor.r, foreColor.g, foreColor.b, 0.7f );
-            
+                selectedIcon.color = new Color(foreColor.r, foreColor.g, foreColor.b, 0.7f);
+
         }
 
         // Set the settings created in this parent object to the instantiated child object, which is the Message
@@ -271,9 +277,9 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
         }
 
         // Changes the position of the message on the screen, using the RectTransform anchor and its position.
-            // Note that all guidance is based on the size of the Background,
-            // so if you want to change the default prefab to create your own,
-            // remember that everything must be contained within the background size!
+        // Note that all guidance is based on the size of the Background,
+        // so if you want to change the default prefab to create your own,
+        // remember that everything must be contained within the background size!
         void SetMessagePositionOnScreen()
         {
 
@@ -342,7 +348,7 @@ public class ToastNotification : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     // Do you want to capitalize the first letter? Use my capitalize function :)
     // Just make it public
-    private static string Capitalize( string text )
+    private static string Capitalize(string text)
     {
         if (string.IsNullOrEmpty(text))
             return text;

@@ -1,24 +1,58 @@
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class ControladorPassaros : MonoBehaviour
 {
-    private List<GameObject> passaros = new List<GameObject>();
+    private GameObject[] passaros;
+    [SerializeField] private float intervaloEntrePassaros = 1f;
 
-    private void Start()
+    private void Awake()
     {
-        foreach (Transform filho in transform)
+        int totalFilhos = transform.childCount;
+
+        if (totalFilhos == 0)
         {
-            passaros.Add(filho.gameObject);
-            filho.gameObject.SetActive(false); 
-        }   
+            Debug.LogError("Não há filhos no objeto " + gameObject.name);
+            return;
+        }
+
+        passaros = new GameObject[totalFilhos];
+
+        for (int i = 0; i < totalFilhos; i++)
+        {
+            passaros[i] = transform.GetChild(i).gameObject;
+            passaros[i].SetActive(false);
+        }
+
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
+        if (passaros == null || passaros.Length == 0)
+        {
+            Debug.LogError("Nenhum pássaro encontrado no objeto: " + gameObject.name);
+            return;
+        }
+
+        StartCoroutine(AtivarPassaros());
+    }
+
+    private IEnumerator AtivarPassaros()
+    {
+        gameObject.SetActive(true);
+
         foreach (GameObject passaro in passaros)
         {
-            passaro.SetActive(true);
+            if (passaro != null)
+            {
+                passaro.SetActive(true);
+                yield return new WaitForSeconds(intervaloEntrePassaros);
+            }
+            else
+            {
+                Debug.LogError("Um dos pássaros está nulo!");
+            }
         }
     }
 }

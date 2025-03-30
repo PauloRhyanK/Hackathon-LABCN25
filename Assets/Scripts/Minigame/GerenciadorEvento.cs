@@ -1,46 +1,48 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GerenciadorEvento : MonoBehaviour
 {
-    public static event Action<int> AoClicarBotao;
-    [SerializeField] private Canvas canvas;
-    private float tempoEspera = 3f; // Tempo antes de reativar o Canvas
+    public static event Action<int, GameObject> AoClicarBotao;
+    private static int botoesClicados = 0;
+    [SerializeField] private GameObject imagemFinal;
+    [SerializeField] private GameObject panel;
 
-    public static void DispararEvento(int numeroDoBotao)
+    public static void DispararEvento(int numeroDoBotao, GameObject botao)
     {
-        AoClicarBotao?.Invoke(numeroDoBotao);
+        AoClicarBotao?.Invoke(numeroDoBotao, botao);
     }
 
-    private void AoClicarNoBotao()
+    private void OnEnable()
     {
-        Debug.Log("Método AoClicarNoBotao foi chamado."); // Log para depuração
-        StartCoroutine(ExecutarAnimacao());
+        botoesClicados = 0;
+        if (imagemFinal != null)
+        {
+            imagemFinal.SetActive(false);
+        }
     }
 
-    private IEnumerator ExecutarAnimacao()
+    public static void ContarBotoes()
     {
-        // Desativar a visualização do Canvas
-        if (canvas != null)
+        botoesClicados++;
+        if (botoesClicados >= 3)
         {
-            Debug.Log("Desativando o Canvas."); // Log para depuração
-            canvas.enabled = false;
+            GameObject.FindObjectOfType<GerenciadorEvento>().MostrarImagemFinal();
         }
-        else
+    }
+
+    private void MostrarImagemFinal()
+    {
+        if (panel != null)
         {
-            Debug.LogWarning("Canvas não está atribuído no Inspector."); // Log de aviso
+            panel.SetActive(false);
         }
-
-        // Esperar um tempo antes de reativar o Canvas
-        yield return new WaitForSeconds(tempoEspera);
-
-        // Reativar o Canvas
-        if (canvas != null)
+        if (imagemFinal != null)
         {
-            Debug.Log("Reativando o Canvas."); // Log para depuração
-            canvas.enabled = true;
+            imagemFinal.SetActive(true);
         }
     }
 }
