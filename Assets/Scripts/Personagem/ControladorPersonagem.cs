@@ -8,7 +8,6 @@ public class ControladorPersonagem : MonoBehaviour
     public DialogoUI DialogoUI => dialogoUI;
     public IInteracaoDialogo InteracaoD { get; set; }
     private Rigidbody2D personagemRigidbody2D;
-    //private Animator    personagemAnimator;
     public float        personagemSpeed;
     private Vector2     personagemDirection;
     private Animator animator;
@@ -40,16 +39,6 @@ public class ControladorPersonagem : MonoBehaviour
             animator.SetBool("PodeAndar", true);
         } else{
             animator.SetBool("PodeAndar", false);
-        }
-        if(personagemDirection.sqrMagnitude > 0.1)
-        {
-            //personagemAnimator.SetFloat("AxisX", personagemDirection.x);
-            
-            //personagemAnimator.SetInteger("Movement", 1);
-        }
-        else
-        {
-            //personagemAnimator.SetInteger("Movement", 0);
         }
         
         personagemRigidbody2D.MovePosition(personagemRigidbody2D.position + personagemDirection * personagemSpeed * Time.fixedDeltaTime);

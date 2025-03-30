@@ -142,10 +142,10 @@ TextureImporter:
       name: minigameRegar_2
       rect:
         serializedVersion: 2
-        x: 107
-        y: 28
-        width: 26
-        height: 94
+        x: 108
+        y: 29
+        width: 24
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,6 +222,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: minigameRegar_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 6
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f93a5e2f3775e44cbc1471c5742f4d7
+      internalID: 1391222861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -239,6 +260,7 @@ TextureImporter:
       minigameRegar_3: 228680562
       minigameRegar_4: -2134955412
       minigameRegar_5: 115616849
+      minigameRegar_6: 1391222861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
