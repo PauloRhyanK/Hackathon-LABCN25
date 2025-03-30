@@ -24,13 +24,14 @@ public class DetectaArvore : MonoBehaviour
     {
         caixaDeAlerta.SetActive(false);
         arvoreFoiColocada = false;
-        switch(numeroDoModelo){
+        switch (numeroDoModelo)
+        {
             case 1:
                 textoEvento = "Chuva";
-            break;
+                break;
             case 2:
                 textoEvento = "Terremoto";
-            break;
+                break;
         }
         objetoEvento.SetActive(false);
         foreach (Transform filho in objetoLocalizacoes)
@@ -41,27 +42,30 @@ public class DetectaArvore : MonoBehaviour
 
     private IEnumerator EventoArvores()
     {
-        // Desativar o Canvas antes de iniciar o evento
         if (canvas != null)
         {
-            Debug.Log("Desativando o Canvas durante o evento."); // Log para depuração
             canvas.enabled = false;
         }
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         caixaDeAlerta.SetActive(true);
         textoAlerta.text = "O evento de " + textoEvento + " está prestes a acontecer";
         yield return new WaitForSeconds(tempoInicial);
         caixaDeAlerta.SetActive(false);
         textoAlerta.text = "";
-        objetoEvento.SetActive(true);
-        yield return new WaitForSeconds(tempoFinal);
-        objetoEvento.SetActive(false);
 
-        // Reativar o Canvas após o evento
+        if (objetoEvento != null)
+        {
+            objetoEvento.SetActive(true);
+            var scriptEvento = objetoEvento.GetComponent<IScriptEvento>();
+            if (scriptEvento != null)
+            {
+                yield return scriptEvento.ExecutarEvento(); // Executa o evento e espera sua conclusão
+            }
+        }
+
         if (canvas != null)
         {
-            Debug.Log("Reativando o Canvas após o evento."); // Log para depuração
             canvas.enabled = true;
         }
     }
