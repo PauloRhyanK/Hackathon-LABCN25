@@ -349,7 +349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caixaDeDialogo: {fileID: 923702382}
   areaDoTexto: {fileID: 1272847772}
-  dialogoTest: {fileID: 11400000, guid: 556918eb877dbff418756d0e2907c6b6, type: 2}
 --- !u!114 &555650015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41486008e3a1e5d418eae9daecf04be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogoUI: {fileID: 555650014}
   personagemSpeed: 3
 --- !u!70 &680381875
 CapsuleCollider2D:
