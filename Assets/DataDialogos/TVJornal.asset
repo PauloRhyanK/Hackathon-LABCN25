@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1566b741d35535242b814fa5688eafcd, type: 3}
   m_Name: TVJornal
   m_EditorClassIdentifier: 
-  dialogo: []
+  dialogo:
+  - 'Pessoas do mundo todo sofrem por um aumento
+
+    consideravel da temperatura'
+  - "E muitas pessoas desenvolvem cada dia mais problemas respirat\xF3rios"
   respostas: []
