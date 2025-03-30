@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MinigameRegar : MonoBehaviour
@@ -28,7 +29,9 @@ public class MinigameRegar : MonoBehaviour
     [SerializeField] private Transform objetoEscalavel; // Objeto que terá a altura alterada
     [SerializeField] private float alturaMinima = 0.5f;
     [SerializeField] private float alturaMaxima = 2f;
+    [SerializeField] private string nomeDaCena;
     private float velocidadeSlider = 0.5f; 
+    public float forca; // Força inicial do slider
     private void Start()
     {
         AjustarTamanhoLimitador();
@@ -41,6 +44,11 @@ public class MinigameRegar : MonoBehaviour
         AtualizarRegador();
         AtualizarLimitador();
         AtualizarSlider();
+        forca= sliderForca.value;
+        if(sliderForca.value >= 0.97f)
+        {
+            SceneManager.LoadScene(nomeDaCena);
+        }
     }
 
     private void AjustarTamanhoLimitador()
@@ -91,7 +99,7 @@ public class MinigameRegar : MonoBehaviour
     private void AtualizarSlider()
 {
     // Calcula a proximidade do regador com o limitador
-    float tolerancia = 0.5f; // margem de proximidade
+    float tolerancia = 1f; // margem de proximidade
     float distancia = Mathf.Abs(regador.position.y - limitador.position.y);
     float forca = Mathf.Clamp01(1 - Mathf.Max(0, distancia - tolerancia));
 
