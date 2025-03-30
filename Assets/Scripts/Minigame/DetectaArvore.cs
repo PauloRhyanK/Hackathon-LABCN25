@@ -9,6 +9,7 @@ public class DetectaArvore : MonoBehaviour
     [SerializeField] private GameObject modeloArvore;
     [SerializeField] private int numeroDoModelo;
     [SerializeField] private Transform objetoLocalizacoes;
+    [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject caixaDeAlerta;
     [SerializeField] private TMP_Text textoAlerta;
 
@@ -23,13 +24,14 @@ public class DetectaArvore : MonoBehaviour
     {
         caixaDeAlerta.SetActive(false);
         arvoreFoiColocada = false;
-        switch(numeroDoModelo){
+        switch (numeroDoModelo)
+        {
             case 1:
                 textoEvento = "Chuva";
-            break;
+                break;
             case 2:
                 textoEvento = "Terremoto";
-            break;
+                break;
         }
         objetoEvento.SetActive(false);
         foreach (Transform filho in objetoLocalizacoes)
@@ -38,18 +40,35 @@ public class DetectaArvore : MonoBehaviour
         }
     }
 
-    private IEnumerator EventoArvores(){
-        yield return new WaitForSeconds(2);
+    private IEnumerator EventoArvores()
+    {
+        if (canvas != null)
+        {
+            canvas.enabled = false;
+        }
+
+        yield return new WaitForSeconds(1);
         caixaDeAlerta.SetActive(true);
         textoAlerta.text = "O evento de " + textoEvento + " está prestes a acontecer";
         yield return new WaitForSeconds(tempoInicial);
         caixaDeAlerta.SetActive(false);
         textoAlerta.text = "";
-        objetoEvento.SetActive(true);
-        yield return new WaitForSeconds(tempoFinal);
-        objetoEvento.SetActive(false);
-    }
 
+        if (objetoEvento != null)
+        {
+            objetoEvento.SetActive(true);
+            var scriptEvento = objetoEvento.GetComponent<IScriptEvento>();
+            if (scriptEvento != null)
+            {
+                yield return scriptEvento.ExecutarEvento(); // Executa o evento e espera sua conclusão
+            }
+        }
+
+        if (canvas != null)
+        {
+            canvas.enabled = true;
+        }
+    }
 
     void OnEnable()
     {
