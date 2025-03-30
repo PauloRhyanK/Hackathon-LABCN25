@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Maldade
   m_EditorClassIdentifier: 
   dialogo:
-  - "Voc\xEA \xE9 do mau :("
+  - "V\xE1 embora voc\xEA me maguou :("
+  respostas: []

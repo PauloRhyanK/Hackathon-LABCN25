@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1566b741d35535242b814fa5688eafcd, type: 3}
   m_Name: New Objeto Dialogo
   m_EditorClassIdentifier: 
-  dialogo: []
-  respostas: []
+  dialogo:
+  - 
+  - 
+  - 
+  respostas:
+  - textoResposta: 
+    objetoDialogo: {fileID: 0}
+  - textoResposta: 
+    objetoDialogo: {fileID: 0}

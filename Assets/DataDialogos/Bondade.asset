@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bondade
   m_EditorClassIdentifier: 
   dialogo:
-  - "Ebaaaa \xE9 isso ai, protega as \xE1rvores "
+  - "Voc\xEA n\xE3o \xE9 forte o suficiente"
+  respostas: []
