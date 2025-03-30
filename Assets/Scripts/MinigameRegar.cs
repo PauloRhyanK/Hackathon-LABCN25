@@ -28,7 +28,7 @@ public class MinigameRegar : MonoBehaviour
     [SerializeField] private Transform objetoEscalavel; // Objeto que terá a altura alterada
     [SerializeField] private float alturaMinima = 0.5f;
     [SerializeField] private float alturaMaxima = 2f;
-
+    private float velocidadeSlider = 0.5f; 
     private void Start()
     {
         AjustarTamanhoLimitador();
@@ -89,23 +89,24 @@ public class MinigameRegar : MonoBehaviour
     }
 
     private void AtualizarSlider()
-    {
-        // Calcula a proximidade do regador com o limitador
-        float distancia = Mathf.Abs(regador.position.y - limitador.position.y);
-        float forca = Mathf.Clamp01(1 - distancia);
+{
+    // Calcula a proximidade do regador com o limitador
+    float tolerancia = 0.5f; // margem de proximidade
+    float distancia = Mathf.Abs(regador.position.y - limitador.position.y);
+    float forca = Mathf.Clamp01(1 - Mathf.Max(0, distancia - tolerancia));
 
-        // Atualiza o valor do slider
-        sliderForca.value = forca;
+    // Suaviza a mudança do slider ao invés de mudar imediatamente
+    sliderForca.value = Mathf.Lerp(sliderForca.value, forca, Time.deltaTime * velocidadeSlider);
 
-        // Calcula a nova altura
-        float novaAltura = Mathf.Lerp(alturaMinima, alturaMaxima, forca);
-        
-        // Calcula a diferença de altura
-        float diferencaAltura = novaAltura - objetoEscalavel.localScale.y;
+    // Calcula a nova altura suavemente
+    float novaAltura = Mathf.Lerp(alturaMinima, alturaMaxima, sliderForca.value);
+    
+    // Calcula a diferença de altura
+    float diferencaAltura = novaAltura - objetoEscalavel.localScale.y;
 
-        // Aplica a nova altura, mantendo a base fixa
-        objetoEscalavel.localScale = new Vector3(objetoEscalavel.localScale.x, novaAltura, objetoEscalavel.localScale.z);
-        objetoEscalavel.position += new Vector3(0, diferencaAltura / 2, 0);
-    }
+    // Aplica a nova altura, mantendo a base fixa
+    objetoEscalavel.localScale = new Vector3(objetoEscalavel.localScale.x, novaAltura, objetoEscalavel.localScale.z);
+    objetoEscalavel.position += new Vector3(0, diferencaAltura / 2, 0);
+}
 
 }
