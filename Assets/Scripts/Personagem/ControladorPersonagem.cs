@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ControladorPersonagem : MonoBehaviour
 {
+    [SerializeField] private DialogoUI dialogoUI;
+    public DialogoUI DialogoUI => dialogoUI;
+    public IInteracaoDialogo InteracaoD { get; set; }
     private Rigidbody2D personagemRigidbody2D;
     //private Animator    personagemAnimator;
     public float        personagemSpeed;
@@ -14,6 +17,16 @@ public class ControladorPersonagem : MonoBehaviour
     {
         personagemRigidbody2D = GetComponent<Rigidbody2D>();
        //personagemAnimator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if (dialogoUI.estaAberto) return;
+
+         if (Input.GetKeyDown(KeyCode.E))
+        {
+            InteracaoD?.Interagir(this);
+        }
     }
 
     void FixedUpdate()
