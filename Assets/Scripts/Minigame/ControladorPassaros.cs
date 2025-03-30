@@ -4,11 +4,10 @@ using UnityEngine;
 public class ControladorPassaros : MonoBehaviour
 {
     private GameObject[] passaros;
-    [SerializeField] private float intervaloEntrePassaros = 1f; // Tempo entre cada pássaro aparecer
+    [SerializeField] private float intervaloEntrePassaros = 1f;
 
     private void Awake()
     {
-        // Obtém todos os filhos antes de desativar o objeto
         int totalFilhos = transform.childCount;
 
         if (totalFilhos == 0)
@@ -22,10 +21,10 @@ public class ControladorPassaros : MonoBehaviour
         for (int i = 0; i < totalFilhos; i++)
         {
             passaros[i] = transform.GetChild(i).gameObject;
-            passaros[i].SetActive(false); // Desativa os pássaros corretamente
+            passaros[i].SetActive(false);
         }
 
-        gameObject.SetActive(false); // Agora desativa o objeto só depois de configurar tudo
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()

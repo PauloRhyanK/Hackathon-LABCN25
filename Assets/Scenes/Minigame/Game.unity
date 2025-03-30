@@ -266,12 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be482d33ec354ea4b90865769a43612b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passaro6: {fileID: 0}
-  passaro5: {fileID: 1582579226255954004}
-  passaro4: {fileID: 2457590025906264522}
-  passaro3: {fileID: 6165771268532376485}
-  passaro2: {fileID: 8152365451647191332}
-  passaro1: {fileID: 2134429760864616099}
+  intervaloEntrePassaros: 1
 --- !u!1001 &403830014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,8 +413,8 @@ MonoBehaviour:
   objetoLocalizacoes: {fileID: 1096710649}
   panel: {fileID: 1408125325}
   objetoEvento: {fileID: 2098584848}
-  tempoInicial: 1
-  tempoFinal: 3
+  tempoInicial: 0
+  tempoFinal: 0
 --- !u!1 &479101553
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +649,8 @@ MonoBehaviour:
   objetoLocalizacoes: {fileID: 1408718981}
   panel: {fileID: 1408125325}
   objetoEvento: {fileID: 390125615}
-  tempoInicial: 1
-  tempoFinal: 2
+  tempoInicial: 0
+  tempoFinal: 0
 --- !u!1 &694257745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1794,81 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1304571451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304571452}
+  - component: {fileID: 1304571454}
+  - component: {fileID: 1304571453}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1304571452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304571451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1837126092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -190.76}
+  m_SizeDelta: {x: 1305.7578, y: 698.4766}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1304571453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304571451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d351076d2075f8d418165bd45a67ab83, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1304571454
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304571451}
+  m_CullTransparentMesh: 1
 --- !u!1 &1333220662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,8 +2444,8 @@ MonoBehaviour:
   objetoLocalizacoes: {fileID: 1333220663}
   panel: {fileID: 1408125325}
   objetoEvento: {fileID: 938200875}
-  tempoInicial: 1
-  tempoFinal: 2
+  tempoInicial: 0
+  tempoFinal: 0
 --- !u!1 &1700825656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1b39d573374464ab0eec81192baf77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  imagemFinal: {fileID: 1304571451}
+  panel: {fileID: 1408125325}
 --- !u!4 &1713927875
 Transform:
   m_ObjectHideFlags: 0
@@ -2548,6 +2619,7 @@ RectTransform:
   m_Children:
   - {fileID: 1408125326}
   - {fileID: 1209506053}
+  - {fileID: 1304571452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

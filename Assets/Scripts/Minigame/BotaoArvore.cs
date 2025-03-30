@@ -12,6 +12,8 @@ public class BotaoArvore : MonoBehaviour
 
     void QuandoClicar()
     {
-        GerenciadorEvento.DispararEvento(numeroDoBotao);
+        GerenciadorEvento.DispararEvento(numeroDoBotao, gameObject);
+        gameObject.SetActive(false);
+        // GerenciadorEvento.ContarBotoes();
     }
 }

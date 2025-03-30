@@ -1,16 +1,13 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Collections;
-using static ToastNotification;
 
 public class DetectaArvore : MonoBehaviour
 {
     [SerializeField] private GameObject modeloArvore;
     [SerializeField] private int numeroDoModelo;
     [SerializeField] private Transform objetoLocalizacoes;
-    //[SerializeField] private Canvas canvas;
     [SerializeField] private GameObject panel;
     private List<Transform> listaPontos = new List<Transform>();
     private List<GameObject> listaPrefabs = new List<GameObject>();
@@ -58,11 +55,12 @@ public class DetectaArvore : MonoBehaviour
                     }
                 }
             }
-
-            if (panel != null)
+            if (numeroDoModelo == 1)
             {
-                panel.SetActive(true);
+                yield return new WaitForSeconds(7);
             }
+            panel.SetActive(true);
+            GerenciadorEvento.ContarBotoes();
         }
     }
 
@@ -76,7 +74,7 @@ public class DetectaArvore : MonoBehaviour
         GerenciadorEvento.AoClicarBotao -= ReagirAoClique;
     }
 
-    void ReagirAoClique(int numeroDoBotao)
+    void ReagirAoClique(int numeroDoBotao, GameObject botaoClicado)
     {
         if (numeroDoBotao == numeroDoModelo && !arvoreFoiColocada)
         {
@@ -87,7 +85,6 @@ public class DetectaArvore : MonoBehaviour
                 listaPrefabs.Add(arvoreColocada);
             }
             arvoreFoiColocada = true;
-
             StartCoroutine(EventoArvores());
         }
     }
