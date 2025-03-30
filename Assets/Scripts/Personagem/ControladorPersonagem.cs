@@ -11,11 +11,15 @@ public class ControladorPersonagem : MonoBehaviour
     //private Animator    personagemAnimator;
     public float        personagemSpeed;
     private Vector2     personagemDirection;
+    private Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
         personagemRigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
        //personagemAnimator = GetComponent<Animator>();
     }
 
@@ -32,6 +36,11 @@ public class ControladorPersonagem : MonoBehaviour
     void FixedUpdate()
     {
         personagemDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
+        if(personagemDirection.x != 0){
+            animator.SetBool("PodeAndar", true);
+        } else{
+            animator.SetBool("PodeAndar", false);
+        }
         if(personagemDirection.sqrMagnitude > 0.1)
         {
             //personagemAnimator.SetFloat("AxisX", personagemDirection.x);
@@ -44,6 +53,7 @@ public class ControladorPersonagem : MonoBehaviour
         }
         
         personagemRigidbody2D.MovePosition(personagemRigidbody2D.position + personagemDirection * personagemSpeed * Time.fixedDeltaTime);
+        Flip();
 
     }
 
