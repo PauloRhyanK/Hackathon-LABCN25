@@ -3,16 +3,15 @@ using UnityEngine.UI;
 
 public class BotaoArvore : MonoBehaviour
 {
-    public Button botao;
-    public string nomeBotao;
+    [SerializeField] private int numeroDoBotao;
 
     void Start()
     {
-        botao.onClick.AddListener(QuandoClicar);
+        GetComponent<Button>().onClick.AddListener(QuandoClicar);
     }
 
     void QuandoClicar()
     {
-        GerenciadorEvento.DispararEvento(nomeBotao);
+        GerenciadorEvento.DispararEvento(numeroDoBotao);
     }
 }
