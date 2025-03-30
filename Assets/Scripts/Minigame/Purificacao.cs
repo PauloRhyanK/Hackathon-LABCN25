@@ -19,12 +19,13 @@ public class Purificacao : MonoBehaviour, IScriptEvento
         if (fumaca != null)
         {
 
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             if (fundo != null)
             {
                 fundo.SetActive(true);
             }
             fumaca.SetActive(false);
+            yield return new WaitForSeconds(2);
             //fumaca2.SetActive(false);
 
 

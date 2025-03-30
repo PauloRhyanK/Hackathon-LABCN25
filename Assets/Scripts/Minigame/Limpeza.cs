@@ -20,6 +20,7 @@ public class Limpeza : MonoBehaviour, IScriptEvento
             {
                 rio.SetActive(true);
             }
+            yield return new WaitForSeconds(4);
             particulaChuva.SetActive(false);
 
 
