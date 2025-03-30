@@ -1,18 +1,14 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Collections;
 
 public class DetectaArvore : MonoBehaviour
 {
     [SerializeField] private GameObject modeloArvore;
     [SerializeField] private int numeroDoModelo;
     [SerializeField] private Transform objetoLocalizacoes;
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private GameObject caixaDeAlerta;
-    [SerializeField] private TMP_Text textoAlerta;
-
+    [SerializeField] private GameObject panel;
     private List<Transform> listaPontos = new List<Transform>();
     private List<GameObject> listaPrefabs = new List<GameObject>();
     private bool arvoreFoiColocada;
@@ -22,18 +18,19 @@ public class DetectaArvore : MonoBehaviour
 
     private void Start()
     {
-        caixaDeAlerta.SetActive(false);
         arvoreFoiColocada = false;
         switch (numeroDoModelo)
         {
             case 1:
-                textoEvento = "Chuva";
+                textoEvento = "Com a Auracaria, o Galha-Azul desperta em voo, um hino à biodiversidade que renova a vida...";
                 break;
             case 2:
-                textoEvento = "Terremoto";
+                textoEvento = "Na sombra da Casuarina, a chuva se faz prece, purificando o rio e firmando a terra";
+                break;
+            case 3:
+                textoEvento = "A Faia inspira o céu: ar limpo, brisa suave, um abraço que transforma o calor em calma.";
                 break;
         }
-        objetoEvento.SetActive(false);
         foreach (Transform filho in objetoLocalizacoes)
         {
             listaPontos.Add(filho);
@@ -42,31 +39,28 @@ public class DetectaArvore : MonoBehaviour
 
     private IEnumerator EventoArvores()
     {
-        if (canvas != null)
+        if (panel != null)
         {
-            canvas.enabled = false;
-        }
-
-        yield return new WaitForSeconds(1);
-        caixaDeAlerta.SetActive(true);
-        textoAlerta.text = "O evento de " + textoEvento + " está prestes a acontecer";
-        yield return new WaitForSeconds(tempoInicial);
-        caixaDeAlerta.SetActive(false);
-        textoAlerta.text = "";
-
-        if (objetoEvento != null)
-        {
-            objetoEvento.SetActive(true);
-            var scriptEvento = objetoEvento.GetComponent<IScriptEvento>();
-            if (scriptEvento != null)
+            panel.SetActive(false);
+            ToastNotification.Show(textoEvento, 7);
+            if (objetoEvento != null)
             {
-                yield return scriptEvento.ExecutarEvento(); // Executa o evento e espera sua conclusão
+                objetoEvento.SetActive(true);
+                var scriptsEvento = objetoEvento.GetComponents<IScriptEvento>();
+                foreach (var scriptEvento in scriptsEvento)
+                {
+                    if (scriptEvento != null)
+                    {
+                        yield return scriptEvento.ExecutarEvento();
+                    }
+                }
             }
-        }
-
-        if (canvas != null)
-        {
-            canvas.enabled = true;
+            if (numeroDoModelo == 1)
+            {
+                yield return new WaitForSeconds(7);
+            }
+            panel.SetActive(true);
+            GerenciadorEvento.ContarBotoes();
         }
     }
 
@@ -80,7 +74,7 @@ public class DetectaArvore : MonoBehaviour
         GerenciadorEvento.AoClicarBotao -= ReagirAoClique;
     }
 
-    void ReagirAoClique(int numeroDoBotao)
+    void ReagirAoClique(int numeroDoBotao, GameObject botaoClicado)
     {
         if (numeroDoBotao == numeroDoModelo && !arvoreFoiColocada)
         {
@@ -91,7 +85,6 @@ public class DetectaArvore : MonoBehaviour
                 listaPrefabs.Add(arvoreColocada);
             }
             arvoreFoiColocada = true;
-
             StartCoroutine(EventoArvores());
         }
     }
