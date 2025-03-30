@@ -33,7 +33,6 @@ public class DetectaArvore : MonoBehaviour
                 textoEvento = "Terremoto";
                 break;
         }
-        objetoEvento.SetActive(false);
         foreach (Transform filho in objetoLocalizacoes)
         {
             listaPontos.Add(filho);
@@ -57,10 +56,13 @@ public class DetectaArvore : MonoBehaviour
         if (objetoEvento != null)
         {
             objetoEvento.SetActive(true);
-            var scriptEvento = objetoEvento.GetComponent<IScriptEvento>();
-            if (scriptEvento != null)
+            var scriptsEvento = objetoEvento.GetComponents<IScriptEvento>();
+            foreach (var scriptEvento in scriptsEvento)
             {
-                yield return scriptEvento.ExecutarEvento(); // Executa o evento e espera sua conclusão
+                if (scriptEvento != null)
+                {
+                    yield return scriptEvento.ExecutarEvento();
+                }
             }
         }
 

@@ -5,7 +5,11 @@ public class Limpeza : MonoBehaviour, IScriptEvento
 {
     [SerializeField] private GameObject particulaChuva;
     [SerializeField] private GameObject rio;
+    private void Start()
+    {
+        rio.SetActive(false);
 
+    }
     public IEnumerator ExecutarEvento()
     {
         if (particulaChuva != null)

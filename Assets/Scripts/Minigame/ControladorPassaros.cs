@@ -7,16 +7,12 @@ public class ControladorPassaros : MonoBehaviour
 
     private void Start()
     {
-        foreach (Transform filho in transform)
-        {
-            passaros.Add(filho.gameObject);
-            filho.gameObject.SetActive(false); 
-        }   
+        passaros.Add(gameObject);
+        gameObject.SetActive(false);
     }
-
     private void OnEnable()
     {
-        foreach (GameObject passaro in passaros)
+        foreach (var passaro in passaros)
         {
             passaro.SetActive(true);
         }
