@@ -9,6 +9,7 @@ public class DetectaArvore : MonoBehaviour
     [SerializeField] private GameObject modeloArvore;
     [SerializeField] private int numeroDoModelo;
     [SerializeField] private Transform objetoLocalizacoes;
+    [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject caixaDeAlerta;
     [SerializeField] private TMP_Text textoAlerta;
 
@@ -38,7 +39,15 @@ public class DetectaArvore : MonoBehaviour
         }
     }
 
-    private IEnumerator EventoArvores(){
+    private IEnumerator EventoArvores()
+    {
+        // Desativar o Canvas antes de iniciar o evento
+        if (canvas != null)
+        {
+            Debug.Log("Desativando o Canvas durante o evento."); // Log para depuração
+            canvas.enabled = false;
+        }
+
         yield return new WaitForSeconds(2);
         caixaDeAlerta.SetActive(true);
         textoAlerta.text = "O evento de " + textoEvento + " está prestes a acontecer";
@@ -48,8 +57,14 @@ public class DetectaArvore : MonoBehaviour
         objetoEvento.SetActive(true);
         yield return new WaitForSeconds(tempoFinal);
         objetoEvento.SetActive(false);
-    }
 
+        // Reativar o Canvas após o evento
+        if (canvas != null)
+        {
+            Debug.Log("Reativando o Canvas após o evento."); // Log para depuração
+            canvas.enabled = true;
+        }
+    }
 
     void OnEnable()
     {
