@@ -21,8 +21,8 @@ Inspirado na sustentabilidade e na biodiversidade, o jogo permite ao jogador pla
 ## Tecnologias Utilizadas
 - **Unity** (motor de jogo)
 - **C#** (linguagem de programação)
-- **Photoshop/Aseprite** (criação de artes)
-- **GitHub** (controle de versão)
+- **Pixelart/Aseprite** (criação de artes)
+- **Git** (controle de versão)
 
 ## Referências
 - Estudos sobre reflorestamento e impacto ambiental.
